@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# run mongodb on docker
-
-docker run -d -v mongo_persitent_volume:/data/db -p 27017:27017 --name mongodb mongo_image
