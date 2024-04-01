@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # run mongodb on docker
 
-docker run -d -v mongo_persitent_volume:/data/db -p 27017:27017 --name mongodb mongo_image
+docker run -d -v mongo_persistent_volume:/data/db -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=$MONGO_ROOT_USER -e MONGO_INITDB_ROOT_PASSWORD=$MONGO_ROOT_PWD --name mongodb mongo_image
