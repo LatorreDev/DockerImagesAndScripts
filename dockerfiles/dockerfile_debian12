@@ -1,0 +1,15 @@
+FROM debian:bookworm
+
+ENV TZ=America/BOGOTA
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt update && \
+    apt install -y curl neovim git zsh sudo && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt upgrade
+
+RUN mkdir /data
+
+WORKDIR /data
+
+CMD ["zsh"]
